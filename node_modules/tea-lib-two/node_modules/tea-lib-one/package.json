@@ -1,0 +1,22 @@
+{
+  "name": "tea-lib-one",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/difrule/tea-lib-one.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/difrule/tea-lib-one/issues"
+  },
+  "homepage": "https://github.com/difrule/tea-lib-one#readme",
+  "dependencies": {
+    "react": "^18.2.0"
+  }
+}
