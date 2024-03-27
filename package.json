@@ -1,14 +1,9 @@
 {
-  "name": "baby-tea",
-  "version": "3.0.0",
-  "author": "2246250622",
-  "description": "common toolkit",
-  "keywords": [
-    "utils",
-    "format",
-    "money",
-    "phone"
-  ],
+  "name": "baby-tea", 
+  "version": "4.0.0", 
+  "author": "2246250622", 
+  "description": "common toolkit", 
+  "keywords": ["utils", "format", "money", "phone"], 
   "repository": {
     "type": "git",
     "url": "https://github.com/2246250622/baby-tea"
