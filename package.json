@@ -1,9 +1,14 @@
 {
-  "name": "baby-tea", 
-  "version": "4.0.0", 
-  "author": "2246250622", 
-  "description": "common toolkit", 
-  "keywords": ["utils", "format", "money", "phone"], 
+  "name": "baby-tea",
+  "version": "4.0.0",
+  "author": "2246250622",
+  "description": "common toolkit",
+  "keywords": [
+    "utils",
+    "format",
+    "money",
+    "phone"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/2246250622/baby-tea"
@@ -16,6 +21,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "@shawncvv/withref": "^0.0.2",
     "shell-oooooyoung": "^1.1.10"
   }
 }
