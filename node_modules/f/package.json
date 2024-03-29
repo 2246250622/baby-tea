@@ -1,0 +1,15 @@
+{
+  "name": "f",
+  "version": "1.4.0",
+  "description": "Functional Microservice Request Library",
+  "main": "lib/f.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Keith Horwood",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/poly/f.git"
+  },
+  "license": "MIT"
+}

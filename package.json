@@ -1,6 +1,6 @@
 {
   "name": "baby-tea",
-  "version": "4.0.0",
+  "version": "4.0.3",
   "author": "2246250622",
   "description": "common toolkit",
   "keywords": [
@@ -21,7 +21,40 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "@finalytic/utils": "^4.7.59",
+    "@juicyllama/dev": "^0.2.0",
+    "@juicyllama/utils": "^0.10.0",
     "@shawncvv/withref": "^0.0.2",
-    "shell-oooooyoung": "^1.1.10"
+    "a": "^3.0.1",
+    "b": "^2.0.1",
+    "c": "^1.1.1",
+    "d": "^1.0.2",
+    "e": "^0.2.33",
+    "f": "^1.4.0",
+    "g": "^2.0.1",
+    "h": "^1.0.0",
+    "hello-armadillo": "^1.0.2",
+    "hello-banana": "^1.0.2",
+    "hello-bearface": "^1.0.2",
+    "hello-bees": "^1.0.2",
+    "i": "^0.3.7",
+    "j": "^1.0.0",
+    "k": "^1.1.3",
+    "l": "^0.6.0",
+    "m": "^1.9.0",
+    "o": "^2.3.2",
+    "p": "^0.2.0",
+    "q": "^1.5.1",
+    "r": "^0.0.5",
+    "s": "^1.0.0",
+    "shell-oooooyoung": "^1.1.10",
+    "t": "^0.5.1",
+    "u": "^0.1.0",
+    "v": "^0.3.0",
+    "w": "^1.1.0",
+    "x": "^0.1.2",
+    "y": "^0.3.2",
+    "yowbisa205": "^1.1.4",
+    "z": "^1.0.9"
   }
 }

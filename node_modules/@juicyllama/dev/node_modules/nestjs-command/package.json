@@ -1,0 +1,88 @@
+{
+  "name": "nestjs-command",
+  "version": "3.1.4",
+  "description": "nest.js command tool",
+  "author": {
+    "name": "zhong666",
+    "email": "aa900031@gmail.com"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "rimraf dist && tsc -b tsconfig.build.json",
+    "format": "prettier lib/**/*.ts --write",
+    "test": "tsx scripts/test.ts"
+  },
+  "files": [
+    "dist",
+    "bin"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js"
+    },
+    "./*": "./*"
+  },
+  "dependencies": {
+    "lodash.compact": "^3.0.1",
+    "lodash.flattendeep": "^4.4.0"
+  },
+  "bin": {
+    "nestjs-command": "./bin/cli"
+  },
+  "devDependencies": {
+    "@nestjs/common": "^6.0.5",
+    "@nestjs/core": "^6.0.5",
+    "@nestjs/testing": "^6.0.5",
+    "@types/jest": "^27.0.1",
+    "@types/lodash.compact": "^3.0.6",
+    "@types/lodash.flattendeep": "^4.4.6",
+    "@types/node": "^10.3.5",
+    "@types/yargs": "^16.0.4",
+    "cross-env": "^7.0.3",
+    "execa": "^5.1.1",
+    "jest": "^27.0.6",
+    "nestjs-common-6": "npm:@nestjs/common@^6.0.5",
+    "nestjs-common-7": "npm:@nestjs/common@^7.0.0",
+    "nestjs-common-8": "npm:@nestjs/common@^8.0.0",
+    "nestjs-common-9": "npm:@nestjs/common@^9.0.0",
+    "nestjs-common-10": "npm:@nestjs/common@^10.0.0",
+    "nestjs-core-6": "npm:@nestjs/core@^6.0.0",
+    "nestjs-core-7": "npm:@nestjs/core@^7.0.0",
+    "nestjs-core-8": "npm:@nestjs/core@^8.0.0",
+    "nestjs-core-9": "npm:@nestjs/core@^9.0.0",
+    "nestjs-core-10": "npm:@nestjs/core@^10.0.0",
+    "nestjs-testing-6": "npm:@nestjs/testing@^6.0.0",
+    "nestjs-testing-7": "npm:@nestjs/testing@^7.0.0",
+    "nestjs-testing-8": "npm:@nestjs/testing@^8.0.0",
+    "nestjs-testing-9": "npm:@nestjs/testing@^9.0.0",
+    "nestjs-testing-10": "npm:@nestjs/testing@^10.0.0",
+    "prettier": "^1.14.2",
+    "reflect-metadata": "^0.1.12",
+    "rimraf": "^3.0.2",
+    "rxjs": "7.3.0",
+    "rxjs-6": "npm:rxjs@6.0.0",
+    "rxjs-7": "npm:rxjs@7.3.0",
+    "ts-jest": "^27.0.5",
+    "tsx": "^3.12.1",
+    "typescript": "^4.4.2",
+    "yargs-16": "npm:yargs@^16.0.0",
+    "yargs-17": "npm:yargs@^17.0.0"
+  },
+  "peerDependencies": {
+    "@nestjs/common": "^6.0.0 || ^7.0.0 || ^8.0.0 || ^9.0.0 || ^10.0.0",
+    "@nestjs/core": "^6.0.0 || ^7.0.0 || ^8.0.0 || ^9.0.0 || ^10.0.0",
+    "yargs": "^16.0.0 || ^17.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/aa900031/nestjs-command.git"
+  },
+  "keywords": [
+    "nestjs",
+    "command",
+    "cli",
+    "yargs"
+  ]
+}
