@@ -1,0 +1,27 @@
+{
+  "name": "html-escape",
+  "version": "2.0.0",
+  "description": "Escape string for use in html",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:parshap/html-escape.git"
+  },
+  "keywords": [
+    "html",
+    "html entities",
+    "escape",
+    "xss"
+  ],
+  "author": "Parsha Pourkhomami",
+  "license": "Public Domain",
+  "bugs": {
+    "url": "https://github.com/parshap/html-escape/issues"
+  },
+  "devDependencies": {
+    "tape": "~2.0.0"
+  }
+}

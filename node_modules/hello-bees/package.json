@@ -1,0 +1,22 @@
+{
+  "name": "hello-bees",
+  "version": "1.0.2",
+  "description": "bees says hello world",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/owenjames/hello-worlds.git",
+    "directory": "hellos/hello-bees"
+  },
+  "main": "index.js",
+  "author": "justowen",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "cowsay": "1.5.0",
+    "hello-armadillo": "^1.0.0",
+    "hello-banana": "^1.0.0",
+    "hello-bearface": "^1.0.0"
+  }
+}

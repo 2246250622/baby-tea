@@ -1,0 +1,35 @@
+assert = require 'assert'
+u      = require 'u'
+
+I = (x) -> x
+K = (k) -> -> k
+
+exports.testReduce = ->
+    o = { foo:'foo', bar:42 }
+    a = [ 1, 2, 3 ]
+    
+    
+    assert.deepEqual()
+
+/*
+Tests:
+
+# u.reduce(o, fn, [acc], [cxt=o])
+- basic array
+- basic object
+- confirm context
+- confirm context default=o
+- confirm empty acc
+- die on missing fn
+
+# u.map(o, fn, cxt=o)
+# u.extend(A, B) -> Object
+# u.bind(fn, context) -> Function
+# u.isArray(o) -> Boolean
+# u.strip(s) -> String
+# u.toKV(o, delimiter='&') -> String
+# u.fromKV(q, delimiter='&') -> Object
+
+# u.setCookie(k, v, expires, path, domain, doc) -> Object
+
+*/

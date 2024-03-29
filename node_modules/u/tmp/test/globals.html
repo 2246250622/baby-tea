@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>u.js Leaking Globals Test</title>
+<style type="text/css" media="screen">
+#status { padding:1em; margin:1em; font-size:24pt; background-color:#E73075; color:#fff; }
+.rounded { border-radius:10px; -moz-border-radius:10px; -webkit-border-radius:10px; }
+</style>
+</head>
+<body>
+
+<div>
+    <h1>u.js Leaking Globals Test</h1>
+    <div id="info"></div>
+</div>
+
+<div id="status" class="rounded">...</div>
+
+<ol id="results"></ol>
+
+<script src="http://projects.woo/simoon/lib/jquery-1.4.2.min.js" type="text/javascript"></script>
+<script src="globals.js" type="text/javascript"></script>
+
+</body>
+</html>

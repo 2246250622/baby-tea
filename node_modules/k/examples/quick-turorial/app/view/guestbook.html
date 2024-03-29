@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>留言本演示</title>
+    <link href="/i/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#">留言本演示</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-md-8">
+                {% for record in records %}
+                <div class="panel panel-default" id="panel-{{record.id}}">
+                    <div class="panel-body">
+                        <div class="media">
+                            <div class="media-left">
+                                <a href="#">
+                                    <img class="media-object" src="/i/img/1.gif" alt="...">
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading"><a href="javascript:void(0);" onclick="showmsg({{record.id}})">{{record.title}}</a><button type="button" class="close" aria-label="Close" onclick="delmsg({{record.id}})"><span aria-hidden="true">&times;</span></button></h4>                                {{record.contents}}
+
+                                <blockquote class="blockquote-reverse small">
+                                    <ul class="list-inline text-muted">
+
+                                        <li>by</li>
+                                        <li>{{record.username}}</li>
+                                        <li>{{record.createtime}}</li>
+                                        <li>
+                                        <button type="button" class="btn btn-default btn-xs"  onclick="digmsg({{record.id}})"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> <span id="dig-{{record.id}}">{{record.dig}}</span></button>
+                                    </li>
+                                    </ul>
+                                </blockquote>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                {% if page != undefined %}
+                <nav>
+                    <ul class="pagination pull-right">
+                        <li>
+                            <a href="/?p={{page.prev_page}}" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        {% for p in page.all_pages %}
+                        <li {% if p == page.current_page %} class="active"{% endif %}>
+                            <a href="/?p={{p}}">{{p}}</a>
+                        </li>
+                        {% endfor %}
+                        <li>
+                            <a href="/?p={{page.next_page}}" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                {% endif %}
+            </div>
+            <div class="col-md-4">
+                <nav>
+                    <ul class="nav nav-pills nav-stacked">
+                        <li role="presentation" class="active"><a href="javascript:void(0);" data-toggle="modal" data-target="#myModal">发表留言</a></li>
+                        <li role="presentation"><a href="http://www.speedphp.com/" target="_blank">看看教程</a></li>
+                        <!--<li role="presentation"><a href="#">...</a></li>-->
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<form method="POST" action="/write">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="myModalLabel">填写留言</h4>
+					</div>
+					<div class="modal-body">
+						<div class="form-group">
+							<label for="inputTitle">标题</label>
+							<input type="text" name="title" class="form-control" id="inputTitle" placeholder="请输入标题...">
+						</div>
+						<div class="form-group">
+							<label for="inputContent">内容</label>
+							<textarea name="contents" class="form-control" rows="3" id="inputContent" placeholder="请输入内容..."></textarea>
+						</div>
+						<div class="form-group">
+							<label for="inputName">您的名字</label>
+							<input type="text" name="username" class="form-control" id="inputName" placeholder="请输入名字...">
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+						<button type="submit" class="btn btn-primary">提交</button>
+					</div>
+				</div>
+			</div>
+        </form>
+    </div>
+    <div class="modal fade" id="showModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="show_title"></h4>
+                </div>
+                <div class="modal-body">
+                    <p id="show_contents"></p>
+                    <blockquote class="blockquote-reverse small">
+                        <ul class="list-inline text-muted">
+
+                            <li>by</li>
+                            <li id="show_username"></li>
+                            <li id="show_createtime"></li>
+                            <li>
+                                <button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> <span id="show_dig"></span></button>
+                            </li>
+                        </ul>
+                    </blockquote>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function showmsg(id){
+            $.getJSON("/single", { 'upid': id }, function(json){
+                $("#show_title").html(json.title);
+                $("#show_contents").html(json.contents);
+                $("#show_username").html(json.username);
+                $("#show_createtime").html(json.createtime);
+                $("#show_dig").html(json.dig);
+                $('#showModal').modal('show');
+            });
+        }
+        function digmsg(id){
+            $.get("/like", {"upid" : id}, function(dig){
+                $("#dig-" + id).html(dig);
+            });
+        }
+        function delmsg(id){
+            $.get("/del", {"upid" : id}, function(){
+                $("#panel-" + id).fadeOut();
+            });
+        }
+    </script>
+    <script src="/i/js/jquery.min.js"></script>
+    <script src="/i/js/bootstrap.min.js"></script>
+</body>
+
+</html>

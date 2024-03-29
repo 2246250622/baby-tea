@@ -1,0 +1,19 @@
+{
+  "name": "hello-armadillo",
+  "version": "1.0.2",
+  "description": "armadillo says hello world",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/owenjames/hello-worlds.git",
+    "directory": "hellos/hello-armadillo"
+  },
+  "main": "index.js",
+  "author": "justowen",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "cowsay": "1.5.0"
+  }
+}

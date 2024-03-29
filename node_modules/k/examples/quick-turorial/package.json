@@ -1,0 +1,12 @@
+{
+  "name": "app",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "k": "latest",
+    "koa": "^2.3.0",
+    "moment": "^2.19.2",
+    "twig": "^1.10.5"
+  }
+}
