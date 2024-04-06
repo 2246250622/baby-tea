@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Web3 Game Example</title>
+  <script src="https://cdn.jsdelivr.net/npm/web3@1.5.3/dist/web3.min.js"></script>
+  <script>
+    // Check if Web3 is available
+    if (typeof web3 !== 'undefined') {
+      web3 = new Web3(web3.currentProvider);
+    } else {
+      // Set up fallback provider (replace with your desired provider)
+      web3 = new Web3(new Web3.providers.HttpProvider('https://mainnet.infura.io/v3/your-infura-api-key'));
+    }
+
+    // Example function to interact with Web3
+    async function interactWithWeb3() {
+      try {
+        // Check if the user is connected to a wallet
+        const accounts = await web3.eth.getAccounts();
+        if (accounts.length === 0) {
+          console.log('Please connect to a wallet');
+          return;
+        }
+
+        // Retrieve the user's address
+        const userAddress = accounts[0];
+        console.log('User Address:', userAddress);
+
+        // Get the user's balance
+        const balance = await web3.eth.getBalance(userAddress);
+        console.log('Balance:', web3.utils.fromWei(balance, 'ether'), 'ETH');
+
+        // Example interaction with a smart contract or blockchain functionality
+        // ...
+
+      } catch (error) {
+        console.error('Error:', error);
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>Web3 Game Example</h1>
+  
+  <button onclick="interactWithWeb3()">Interact with Web3</button>
+</body>
+</html>
