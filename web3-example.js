@@ -43,4 +43,8 @@ async function interactWithContract() {
 }
 
 // Call the function to interact with the contract
+<<<<<<< HEAD
 interactWithContract();
+=======
+interactWithContract();
+>>>>>>> 3b13b12f41444dae057472b71fad1451f23c7341
